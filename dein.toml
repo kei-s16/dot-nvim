@@ -152,12 +152,11 @@ repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]
 repo = 'vim-skk/skkeleton'
-depends = ['ddc.vim']
+depends = ['ddc.vim', 'skkeleton-azik-kanatable']
 lua_add = "require('plugins.skkeleton')"
 
 [[plugins]]
 repo = 'kei-s16/skkeleton-azik-kanatable'
-on_source = 'skkeleton'
 
 [[plugins]]
 repo = 'vim-jp/autofmt'
