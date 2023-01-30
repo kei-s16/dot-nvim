@@ -100,31 +100,31 @@ lua_add = "require('plugins.deol')"
 
 [[plugins]]
 repo = 'Shougo/ddc.vim'
+on_event = ['InsertEnter', 'CursorHold']
 depends = [
-    'denops.vim',
-    'ddc-ui-native',
-    'ddc-around',
-    'ddc-matcher_head',
-    'ddc-sorter_rank',
-    'ddc-nvim-lsp',
-    'skkeleton'
+    'denops.vim'
 ]
 lua_add = "require('plugins.ddc')"
 
 [[plugins]]
 repo = 'Shougo/ddc-ui-native'
+on_source = 'ddc.vim'
 
 [[plugins]]
 repo = 'Shougo/ddc-around'
+on_source = 'ddc.vim'
 
 [[plugins]]
 repo = 'Shougo/ddc-matcher_head'
+on_source = 'ddc.vim'
 
 [[plugins]]
 repo = 'Shougo/ddc-sorter_rank'
+on_source = 'ddc.vim'
 
 [[plugins]]
 repo = 'Shougo/ddc-nvim-lsp'
+on_source = 'ddc.vim'
 
 # dependencies
 [[plugins]]
@@ -152,11 +152,12 @@ repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]
 repo = 'vim-skk/skkeleton'
-depends = ['denops.vim', 'skkeleton-azik-kanatable']
+depends = ['ddc.vim']
 lua_add = "require('plugins.skkeleton')"
 
 [[plugins]]
 repo = 'kei-s16/skkeleton-azik-kanatable'
+on_source = 'skkeleton'
 
 [[plugins]]
 repo = 'vim-jp/autofmt'
