@@ -4,8 +4,8 @@ vim.fn['skkeleton#azik#add_table']()
 vim.fn['skkeleton#azik#set_keyconfig']()
 
 vim.fn['skkeleton#config']{
-  globalJisyo = '~/.eskk/SKK-JISYO.L',
-  userJisyo = '~/.eskk/USER.L',
+  globalJisyo = '~/.skk/SKK-JISYO.L',
+  userJisyo = '~/.skk/USER.L',
   kanaTable = 'azik'
 }
 
