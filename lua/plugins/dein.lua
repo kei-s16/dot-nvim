@@ -1,7 +1,11 @@
 if vim.fn.has('win64') == 1 or vim.fn.has('win32') == 1 then
     vim.api.nvim_set_var('python3_host_prog', vim.fn.expand('~/scoop/apps/python/current/python.exe'))
+    vim.api.nvim_set_var('rc_dir', vim.fn.expand("~/AppData/Local/nvim"))
+    vim.api.nvim_set_var('toml', vim.api.nvim_get_var('rc_dir') .. '/dein.toml')
 else
     vim.api.nvim_set_var('python3_host_prog', vim.fn.expand('~/.asdf/shims/python'))
+    vim.api.nvim_set_var('rc_dir', vim.fn.expand("~/.config/nvim"))
+    vim.api.nvim_set_var('toml', vim.api.nvim_get_var('rc_dir') .. '/dein.toml')
 end
 
 if vim.opt.compatible:get() == true then
@@ -11,6 +15,8 @@ end
 
 local dein_dir = vim.env.HOME .. '/.cache/dein'
 local dein_repo_dir = dein_dir .. '/repos/github.com/Shougo/dein.vim'
+
+vim.api.nvim_set_var('dein#install_process_timeout', 300)
 
 if not string.match(table.concat(vim.opt_global.runtimepath:get()), 'dein.vim') then
     if vim.fn.isdirectory(dein_repo_dir) then
@@ -26,9 +32,6 @@ end
 
 if vim.fn['dein#load_state'](dein_dir) == 1 then
     vim.fn['dein#begin'](dein_dir)
-
-    vim.api.nvim_set_var('rc_dir', vim.fn.expand("~/.config/nvim"))
-    vim.api.nvim_set_var('toml', vim.api.nvim_get_var('rc_dir') .. '/dein.toml')
 
     vim.fn['dein#load_toml'](vim.api.nvim_get_var('toml'), {lazy = 0})
 
