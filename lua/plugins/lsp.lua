@@ -43,6 +43,7 @@ require("mason-lspconfig").setup_handlers {
           on_attach = on_attach,
         }
     end,
+    -- TODO: 必要に応じて設定すること！
     -- LSごとに固有の設定
     -- ["rust_analyzer"] = function ()
     --     require("rust-tools").setup {}
