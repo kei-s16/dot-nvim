@@ -1,0 +1,8 @@
+# Utils
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+depends = ['vim-rhubarb']
+lua_add = "require('plugins.fugitive')"
+
+[[plugins]]
+repo = 'tpope/vim-rhubarb'

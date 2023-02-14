@@ -1,0 +1,11 @@
+[[plugins]]
+repo = 'williamboman/mason.nvim'
+depends = ['mason.nvim', 'nvim-lspconfig']
+lua_add = "require('plugins.lsp')"
+
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+
+[[plugins]]
+repo = 'williamboman/mason-lspconfig.nvim'
+

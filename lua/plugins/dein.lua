@@ -35,9 +35,17 @@ if vim.fn['dein#load_state'](dein_dir) == 1 then
 
     -- toml
     vim.api.nvim_set_var('dein_toml', vim.api.nvim_get_var('toml_dir') .. '/dein.toml')
+    vim.api.nvim_set_var('ddc_toml', vim.api.nvim_get_var('toml_dir') .. '/ddc.toml')
+    vim.api.nvim_set_var('ddu_toml', vim.api.nvim_get_var('toml_dir') .. '/ddu.toml')
+    vim.api.nvim_set_var('git_toml', vim.api.nvim_get_var('toml_dir') .. '/git.toml')
+    vim.api.nvim_set_var('lsp_toml', vim.api.nvim_get_var('toml_dir') .. '/lsp.toml')
 
     -- load toml
     vim.fn['dein#load_toml'](vim.api.nvim_get_var('dein_toml'), {lazy = 0})
+    vim.fn['dein#load_toml'](vim.api.nvim_get_var('ddc_toml'), {lazy = 1})
+    vim.fn['dein#load_toml'](vim.api.nvim_get_var('ddu_toml'), {lazy = 1})
+    vim.fn['dein#load_toml'](vim.api.nvim_get_var('git_toml'), {lazy = 1})
+    vim.fn['dein#load_toml'](vim.api.nvim_get_var('lsp_toml'), {lazy = 1})
 
     vim.fn['dein#end']()
     vim.fn['dein#save_state']()

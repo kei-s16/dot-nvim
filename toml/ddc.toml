@@ -1,0 +1,36 @@
+[[plugins]]
+repo = 'Shougo/ddc.vim'
+on_event = ['InsertEnter', 'CursorHold']
+depends = [
+    'denops.vim'
+]
+lua_add = "require('plugins.ddc')"
+
+[[plugins]]
+repo = 'Shougo/ddc-ui-native'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-around'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-nvim-lsp'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'vim-skk/skkeleton'
+depends = ['ddc.vim', 'skkeleton-azik-kanatable']
+lua_add = "require('plugins.skkeleton')"
+
+[[plugins]]
+repo = 'kei-s16/skkeleton-azik-kanatable'
+
