@@ -147,8 +147,11 @@ repo = 'cohama/lexima.vim'
 repo = 'neovim/nvim-lspconfig'
 
 [[plugins]]
-repo = 'williamboman/nvim-lsp-installer'
+repo = 'williamboman/mason.nvim'
 lua_add = "require('plugins.lsp')"
+
+[[plugins]]
+repo = 'williamboman/mason-lspconfig.nvim'
 
 # 日本語関連のあれこれ
 [[plugins]]
