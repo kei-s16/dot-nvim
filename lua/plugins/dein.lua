@@ -1,11 +1,11 @@
 if vim.fn.has('win64') == 1 or vim.fn.has('win32') == 1 then
     vim.api.nvim_set_var('python3_host_prog', vim.fn.expand('~/scoop/apps/python/current/python.exe'))
     vim.api.nvim_set_var('rc_dir', vim.fn.expand("~/AppData/Local/nvim"))
-    vim.api.nvim_set_var('toml', vim.api.nvim_get_var('rc_dir') .. '/dein.toml')
+    vim.api.nvim_set_var('toml_dir', vim.api.nvim_get_var('rc_dir') .. '/toml')
 else
     vim.api.nvim_set_var('python3_host_prog', vim.fn.expand('~/.asdf/shims/python'))
     vim.api.nvim_set_var('rc_dir', vim.fn.expand("~/.config/nvim"))
-    vim.api.nvim_set_var('toml', vim.api.nvim_get_var('rc_dir') .. '/dein.toml')
+    vim.api.nvim_set_var('toml_dir', vim.api.nvim_get_var('rc_dir') .. '/toml')
 end
 
 if vim.opt.compatible:get() == true then
@@ -33,7 +33,11 @@ end
 if vim.fn['dein#load_state'](dein_dir) == 1 then
     vim.fn['dein#begin'](dein_dir)
 
-    vim.fn['dein#load_toml'](vim.api.nvim_get_var('toml'), {lazy = 0})
+    -- toml
+    vim.api.nvim_set_var('dein_toml', vim.api.nvim_get_var('toml_dir') .. '/dein.toml')
+
+    -- load toml
+    vim.fn['dein#load_toml'](vim.api.nvim_get_var('dein_toml'), {lazy = 0})
 
     vim.fn['dein#end']()
     vim.fn['dein#save_state']()
