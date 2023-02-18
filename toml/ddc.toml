@@ -2,9 +2,9 @@
 repo = 'Shougo/ddc.vim'
 on_event = ['InsertEnter', 'CursorHold']
 depends = [
-    'denops.vim'
+    'denops.vim',
 ]
-lua_add = "require('plugins.ddc')"
+lua_source = "require('plugins.ddc')"
 
 [[plugins]]
 repo = 'Shougo/ddc-ui-native'
@@ -28,9 +28,10 @@ on_source = 'ddc.vim'
 
 [[plugins]]
 repo = 'vim-skk/skkeleton'
-depends = ['ddc.vim', 'skkeleton-azik-kanatable']
-lua_add = "require('plugins.skkeleton')"
+depends = ['ddc.vim']
+on_event = ['InsertEnter']
+lua_source = "require('plugins.skkeleton')"
 
 [[plugins]]
 repo = 'kei-s16/skkeleton-azik-kanatable'
-
+on_source = 'skkeleton'

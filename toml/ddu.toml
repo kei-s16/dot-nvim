@@ -2,11 +2,15 @@
 repo = 'Shougo/ddu.vim'
 depends = [
     'denops.vim',
-    'ddu-ui-ff',
-    'ddu-commands.vim'
 ]
+on_source = 'denops.vim'
 # TODO: lua_addを使うかたちに置きかえる
 hook_add = '''
+    nmap <silent> <leader>o :<C-u>Ddu file_rec<CR>
+    nmap <silent> <leader>r :<C-u>Ddu file_old<CR>
+    nmap <silent> <leader>b :<C-u>Ddu buffer<CR>
+'''
+hook_source = '''
     call ddu#custom#patch_global(
         \ {
         \   'ui': 'ff',
@@ -52,40 +56,41 @@ hook_add = '''
       nnoremap <buffer><silent> q
       \ <Cmd>close<CR>
     endfunction
-
-    nmap <silent> <leader>o :<C-u>Ddu file_rec<CR>
-    nmap <silent> <leader>r :<C-u>Ddu file_old<CR>
-    nmap <silent> <leader>b :<C-u>Ddu buffer<CR>
 '''
 
 # ddu-ui
 [[plugins]]
 repo = 'Shougo/ddu-ui-ff'
-depends = [
-    'ddu-source-file_rec',
-    'ddu-source-file_old',
-    'ddu-filter-matcher_substring',
-    'ddu-kind-file',
-    'ddu-source-buffer'
-]
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-ui-filer'
+on_source = 'ddu.vim'
 
 [[plugins]]
 repo = 'Shougo/ddu-filter-matcher_substring'
+on_source = 'ddu.vim'
 
 [[plugins]]
 repo='Shougo/ddu-commands.vim'
+depends = 'ddu.vim'
+on_cmd = 'Ddu'
 
 # ddu-source
 [[plugins]]
 repo = 'Shougo/ddu-source-file_rec'
+on_source = 'ddu.vim'
 
 [[plugins]]
 repo = 'Shougo/ddu-source-file_old'
+on_source = 'ddu.vim'
 
 [[plugins]]
 repo='shun/ddu-source-buffer'
+on_source = 'ddu.vim'
 
 # ddu-kind
 [[plugins]]
 repo = 'Shougo/ddu-kind-file'
+on_source = 'ddu.vim'
 

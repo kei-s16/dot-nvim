@@ -1,11 +1,12 @@
 [[plugins]]
 repo = 'williamboman/mason.nvim'
-depends = ['mason.nvim', 'nvim-lspconfig']
+on_event = ['VimEnter']
 lua_add = "require('plugins.lsp')"
 
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
+on_source = 'mason.nvim'
 
 [[plugins]]
 repo = 'williamboman/mason-lspconfig.nvim'
-
+on_source = 'mason.nvim'
