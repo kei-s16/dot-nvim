@@ -1,8 +1,9 @@
 # Utils
 [[plugins]]
 repo = 'tpope/vim-fugitive'
-depends = ['vim-rhubarb']
-lua_add = "require('plugins.fugitive')"
+on_event = ['VimEnter']
+lua_source = "require('plugins.fugitive')"
 
 [[plugins]]
 repo = 'tpope/vim-rhubarb'
+on_source = 'vim-fugitive'
