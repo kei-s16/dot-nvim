@@ -33,4 +33,5 @@ function _G.render_tabline()
 end
 
 -- tablineを設定する
-vim.o.tabline = '%!v:lua.render_tabline()'
+vim.opt.showtabline = 2
+vim.opt.tabline = '%!v:lua.render_tabline()'
