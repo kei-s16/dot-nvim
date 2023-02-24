@@ -13,5 +13,4 @@ require('plugins.dein')
 -- load lua files
 require('settings.options')
 require('settings.statusline')
-require('settings.tabline')
 require('settings.keyconfig')
