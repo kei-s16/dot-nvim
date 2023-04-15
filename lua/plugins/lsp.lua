@@ -5,6 +5,7 @@ local DEFAULT_SETTINGS = {
       "lua_ls",
       "rust_analyzer",
       "denols",
+      "tsserver",
       "intelephense",
       "ansiblels",
       "dockerls",
@@ -18,6 +19,7 @@ local DEFAULT_SETTINGS = {
 
 require("mason").setup()
 require("mason-lspconfig").setup(DEFAULT_SETTINGS)
+
 
 -- キーマップくらいはまとめておく
 local on_attach = function(client, bufnr)
@@ -36,16 +38,22 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 end
 
+local lspconfig = require("lspconfig")
+
 require("mason-lspconfig").setup_handlers {
-    -- デフォルトで適用される設定
-    function (server_name) -- default handler (optional)
-        require("lspconfig")[server_name].setup {
-          on_attach = on_attach,
-        }
-    end,
-    -- TODO: 必要に応じて設定すること！
-    -- LSごとに固有の設定
-    -- ["rust_analyzer"] = function ()
-    --     require("rust-tools").setup {}
-    -- end
+  ["denols"] = function ()
+    lspconfig.denols.setup {
+      root_dir = lspconfig.util.root_pattern("deno.json")
+    }
+  end,
+  ["tsserver"] = function ()
+    lspconfig.tsserver.setup {
+      root_dir = lspconfig.util.root_pattern('package.json', 'tsconfig.json')
+    }
+  end,
+  function (server_name) -- 明示的に指定してないやつ一括で
+    lspconfig[server_name].setup {
+      on_attach = on_attach,
+    }
+  end
 }
