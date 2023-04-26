@@ -4,7 +4,11 @@ vim.fn['skkeleton#azik#add_table']()
 vim.fn['skkeleton#azik#set_keyconfig']()
 
 vim.fn['skkeleton#config']{
-  globalJisyo = '~/.skk/SKK-JISYO.L',
+  globalDictionaries = {
+    '~/.skk/SKK-JISYO.L',
+    '~/.skk/SKK-JISYO.kei-s16',
+    '~/.skk/SKK-JISYO.mtg',
+  },
   userJisyo = '~/.skk/USER.L',
   kanaTable = 'azik'
 }
