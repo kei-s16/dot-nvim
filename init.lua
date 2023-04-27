@@ -13,5 +13,7 @@ require('plugins.dein')
 -- load lua files
 require('settings.options')
 require('settings.statusline')
-require('settings.tabline')
+if vim.fn.has('mac') == 0 then
+  require('settings.tabline')
+end
 require('settings.keyconfig')
