@@ -20,8 +20,8 @@ hook_source = '''
         \       {'name': 'buffer', 'params': {}},
         \   ],
         \   'sourceParams': {
-        \       'file_rec': {'ignoredDirectories': ['.git', 'node_modules', 'vendor', 'target', 'dist']},
-        \       'file_old': {'ignoredDirectories': ['.git', 'node_modules', 'vendor', 'target', 'dist']},
+        \       'file_rec': {'ignoredDirectories': ['.git', 'node_modules', '.next', 'vendor', 'target', 'dist']},
+        \       'file_old': {'ignoredDirectories': ['.git', 'node_modules', '.next', 'vendor', 'target', 'dist']},
         \   },
         \   'sourceOptions': {
         \     '_': {
