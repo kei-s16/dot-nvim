@@ -1,10 +1,7 @@
 local keymap = require('utils.keymap').keymap
 
-if vim.fn.has('mac') == 1 then
-  vim.fn['skkeleton#azik#add_table']('jis')
-else
-  vim.fn['skkeleton#azik#add_table']('us')
-end
+vim.fn['skkeleton#azik#add_table']()
+vim.fn['skkeleton#azik#set_keyconfig']()
 
 vim.fn['skkeleton#config']{
   globalDictionaries = {
