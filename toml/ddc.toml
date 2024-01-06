@@ -29,7 +29,6 @@ on_source = 'ddc.vim'
 [[plugins]]
 repo = 'vim-skk/skkeleton'
 depends = ['ddc.vim']
-on_event = ['InsertEnter']
 lua_source = "require('plugins.skkeleton')"
 
 [[plugins]]
