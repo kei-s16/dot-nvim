@@ -1,7 +1,6 @@
 local keymap = require('utils.keymap').keymap
 
-vim.fn['skkeleton#azik#add_table']()
-vim.fn['skkeleton#azik#set_keyconfig']()
+vim.fn['skkeleton#azik#add_table']('jis')
 
 vim.fn['skkeleton#config']{
   globalDictionaries = {
@@ -9,7 +8,7 @@ vim.fn['skkeleton#config']{
     '~/.skk/SKK-JISYO.kei-s16',
     '~/.skk/SKK-JISYO.mtg',
   },
-  userJisyo = '~/.skk/USER.L',
+  userDictionary = '~/.skk/USER.L',
   kanaTable = 'azik'
 }
 
