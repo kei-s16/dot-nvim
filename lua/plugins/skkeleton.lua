@@ -9,7 +9,7 @@ vim.fn['skkeleton#config']{
     '~/.skk/SKK-JISYO.kei-s16',
     '~/.skk/SKK-JISYO.mtg',
   },
-  userJisyo = '~/.skk/USER.L',
+  userDictionary = '~/.skk/USER.L',
   kanaTable = 'azik'
 }
 
