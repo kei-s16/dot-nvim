@@ -39,30 +39,27 @@ ddc.patch_global {
   ui = 'native',
   sources = {'around', 'skkeleton', 'nvim-lsp'},
   sourceOptions = {
-    around = {
-      mark = 'A'
+    ['around'] = {
+      mark = 'A',
     },
-    skkeleton = {
+    ['skkeleton'] = {
       mark = 'skkeleton',
       matchers = {'skkeleton'},
       sorters = {},
       minAutoCompleteLength = 2,
     },
-    _ = {
+    ['nvim-lsp'] = {
+      mark = 'lsp',
+      forceCompletionPattern = [[\.\w*|:\w*|->\w*]],
+      ignoreCase = true,
+      maxItems = 10,
+    },
+    ['_'] = {
       matchers = {'matcher_head'},
-      sorters = {'sorter_rank'}
+      sorters = {'sorter_rank'},
     },
   }
 }
-
--- lua上ではnvim-lspを指定できなかったので
-vim.cmd([[
-call ddc#custom#patch_global('sourceOptions', {
-\ 'nvim-lsp': {
-\   'mark': 'lsp',
-\   'forceCompletionPattern': '\.\w*|:\w*|->\w*' },
-\ })
-]])
 
 ddc.patch_filetype('markdown', {
   sourceParams = {
