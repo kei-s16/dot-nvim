@@ -24,7 +24,7 @@ repo = 'Shougo/ddc-sorter_rank'
 on_source = 'ddc.vim'
 
 [[plugins]]
-repo = 'Shougo/ddc-nvim-lsp'
+repo = 'Shougo/ddc-source-lsp'
 on_source = 'ddc.vim'
 
 [[plugins]]
