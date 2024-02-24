@@ -3,7 +3,7 @@ repo = 'Shougo/ddu.vim'
 depends = [
     'denops.vim',
 ]
-on_source = 'denops.vim'
+on_event = ['VimEnter']
 # TODO: lua_addを使うかたちに置きかえる
 hook_add = '''
     nmap <silent> <leader>o :<C-u>Ddu file_rec<CR>

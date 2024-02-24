@@ -1,7 +1,9 @@
 [[plugins]]
 repo = 'Shougo/ddc.vim'
-on_event = ['InsertEnter', 'CursorHold']
+on_event = ['VimEnter']
 depends = [
+    'denops.vim',
+    'mason.nvim',
     'denops.vim',
     'skkeleton',
 ]
@@ -24,11 +26,11 @@ repo = 'Shougo/ddc-sorter_rank'
 on_source = 'ddc.vim'
 
 [[plugins]]
-repo = 'Shougo/ddc-source-lsp'
-on_source = 'ddc.vim'
-
-[[plugins]]
 repo = 'vim-skk/skkeleton'
+on_event = ['VimEnter']
+depends = [
+    'denops.vim',
+]
 lua_source = "require('plugins.skkeleton')"
 
 [[plugins]]

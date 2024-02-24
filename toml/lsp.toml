@@ -1,7 +1,17 @@
 [[plugins]]
 repo = 'williamboman/mason.nvim'
 on_event = ['VimEnter']
+depends = [
+    'ddc-source-lsp',
+]
 lua_source = "require('plugins.lsp')"
+
+[[plugins]]
+repo = 'Shougo/ddc-source-lsp'
+on_event = ['VimEnter']
+depends = [
+    'denops.vim',
+]
 
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
