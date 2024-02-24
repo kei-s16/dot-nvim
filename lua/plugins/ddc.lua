@@ -37,7 +37,7 @@ end
 
 ddc.patch_global {
   ui = 'native',
-  sources = {'around', 'skkeleton', 'nvim-lsp'},
+  sources = {'around', 'skkeleton', 'lsp'},
   sourceOptions = {
     ['around'] = {
       mark = 'A',
@@ -48,7 +48,7 @@ ddc.patch_global {
       sorters = {},
       minAutoCompleteLength = 2,
     },
-    ['nvim-lsp'] = {
+    ['lsp'] = {
       mark = 'lsp',
       forceCompletionPattern = [[\.\w*|:\w*|->\w*]],
       ignoreCase = true,
