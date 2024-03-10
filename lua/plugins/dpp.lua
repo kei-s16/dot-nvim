@@ -9,7 +9,7 @@ local dpp = require("dpp")
 local dppBase = "~/.cache/dpp"
 if dpp.load_state(dppBase) then
   vim.opt.runtimepath:prepend(denopsSrc)
-  --vim.opt.runtimepath:prepend(denopsInstaller)
+  vim.opt.runtimepath:prepend(denopsInstaller)
 
   vim.api.nvim_create_autocmd("User", {
     pattern = "DenopsReady",
