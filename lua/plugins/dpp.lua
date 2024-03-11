@@ -50,3 +50,18 @@ vim.api.nvim_create_user_command(
   { nargs = 0 }
 )
 
+vim.api.nvim_create_user_command(
+  "DppInstallPlugin",
+  function()
+      dpp.async_ext_action("installer", "install")
+  end,
+  { nargs = 0 }
+)
+
+vim.api.nvim_create_user_command(
+  "DppUpdatePlugin",
+  function()
+      dpp.async_ext_action("installer", "update")
+  end,
+  { nargs = 0 }
+)
