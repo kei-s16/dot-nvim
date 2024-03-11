@@ -1,0 +1,8 @@
+# 日本語関連のあれこれ
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = 'vim-jp/autofmt'
+hook_add = 'set formatexpr=autofmt#japanese#formatexpr()'
+

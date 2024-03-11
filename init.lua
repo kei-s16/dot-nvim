@@ -7,8 +7,8 @@ else
     vim.opt_global.runtimepath:append(vim.env.HOME .. '/.config/nvim')
 end
 
--- dein
-require('plugins.dein')
+-- dpp
+require('plugins.dpp')
 
 -- load lua files
 require('settings.options')
