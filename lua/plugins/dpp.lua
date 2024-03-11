@@ -21,8 +21,6 @@ vim.opt.runtimepath:prepend(vim.fn.expand(dpp_ext_local_repo_dir))
 
 local dpp = require("dpp")
 
--- vim.g["denops#debug"] = 1
-
 if dpp.load_state(dpp_base_path) then
   vim.api.nvim_create_autocmd("User", {
     pattern = "DenopsReady",
