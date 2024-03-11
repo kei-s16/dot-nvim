@@ -4,6 +4,7 @@ DPP_EXT_INSTALLER_DIR := ${HOME}/.cache/dpp/repos/github.com/Shougo/dpp-ext-inst
 DPP_PROTOCOL_GIT_DIR := ${HOME}/.cache/dpp/repos/github.com/Shougo/dpp-protocol-git
 DPP_EXT_LAZY_DIR := ${HOME}/.cache/dpp/repos/github.com/Shougo/dpp-ext-lazy
 DPP_EXT_TOML_DIR := ${HOME}/.cache/dpp/repos/github.com/Shougo/dpp-ext-toml
+DPP_EXT_LOCAL_DIR := ${HOME}/.cache/dpp/repos/github.com/Shougo/dpp-ext-local
 
 install:
 	ln -sfnv $(CURDIR) $(HOME)/.config/nvim
@@ -19,6 +20,7 @@ dpp:
 	if [ ! -d "$(DPP_EXT_INSTALLER_DIR)" ]; then git clone git@github.com:Shougo/dpp-ext-installer.git $(DPP_EXT_INSTALLER_DIR); fi
 	if [ ! -d "$(DPP_EXT_LAZY_DIR)" ]; then git clone git@github.com:Shougo/dpp-ext-lazy.git $(DPP_EXT_LAZY_DIR); fi
 	if [ ! -d "$(DPP_EXT_TOML_DIR)" ]; then git clone git@github.com:Shougo/dpp-ext-toml.git $(DPP_EXT_TOML_DIR); fi
+	if [ ! -d "$(DPP_EXT_LOCAL_DIR)" ]; then git clone git@github.com:Shougo/dpp-ext-local.git $(DPP_EXT_LOCAL_DIR); fi
 
 .PHONY: skk
 skk:
