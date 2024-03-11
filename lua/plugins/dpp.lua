@@ -1,23 +1,24 @@
 local dpp_base_path = "~/.cache/dpp"
 local dpp_config_path = "~/.config/nvim/ts/dpp.ts"
 
-local denops_repo_dir = "~/.cache/dpp/repos/github.com/vim-denops/denops.vim"
+local required_plugin_dir = "~/.cache/dpp/repos/github.com/"
+local required_plugins = {
+  "vim-denops/denops.vim",
+  "Shougo/dpp.vim",
+  "Shougo/dpp-protocol-git",
+  "Shougo/dpp-ext-installer",
+  "Shougo/dpp-ext-toml",
+  "Shougo/dpp-ext-lazy",
+  "Shougo/dpp-ext-local",
+}
 
-local dpp_repo_dir = "~/.cache/dpp/repos/github.com/Shougo/dpp.vim"
-local dpp_protocol_git_repo_dir = "~/.cache/dpp/repos/github.com/Shougo/dpp-protocol-git"
-local dpp_ext_installer_repo_dir = "~/.cache/dpp/repos/github.com/Shougo/dpp-ext-installer"
-local dpp_ext_toml_repo_dir = "~/.cache/dpp/repos/github.com/Shougo/dpp-ext-toml"
-local dpp_ext_lazy_repo_dir = "~/.cache/dpp/repos/github.com/Shougo/dpp-ext-lazy"
-local dpp_ext_local_repo_dir = "~/.cache/dpp/repos/github.com/Shougo/dpp-ext-local"
+local function load_plugins(plugins)
+  for _, plugin in ipairs(plugins) do
+    vim.opt.runtimepath:prepend(vim.fn.expand(required_plugin_dir .. plugin))
+  end
+end
 
-vim.opt.runtimepath:prepend(vim.fn.expand(denops_repo_dir))
-
-vim.opt.runtimepath:prepend(vim.fn.expand(dpp_repo_dir))
-vim.opt.runtimepath:prepend(vim.fn.expand(dpp_protocol_git_repo_dir))
-vim.opt.runtimepath:prepend(vim.fn.expand(dpp_ext_installer_repo_dir))
-vim.opt.runtimepath:prepend(vim.fn.expand(dpp_ext_toml_repo_dir))
-vim.opt.runtimepath:prepend(vim.fn.expand(dpp_ext_lazy_repo_dir))
-vim.opt.runtimepath:prepend(vim.fn.expand(dpp_ext_local_repo_dir))
+load_plugins(required_plugins)
 
 local dpp = require("dpp")
 
