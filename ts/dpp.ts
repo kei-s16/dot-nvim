@@ -47,7 +47,8 @@ export class Config extends BaseConfig {
     for (
       const tomlFile of [
         "dpp.toml",
-        "dein.toml",
+        "theme.toml",
+        "i18n.toml",
       ]
     ) {
       const toml = await args.dpp.extAction(
@@ -76,6 +77,7 @@ export class Config extends BaseConfig {
         "ddu.toml",
         "git.toml",
         "lsp.toml",
+        "etc.toml",
       ]
     ) {
       const toml = await args.dpp.extAction(

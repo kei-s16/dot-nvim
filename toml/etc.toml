@@ -1,0 +1,12 @@
+[[plugins]]
+repo = 'Shougo/deol.nvim'
+lua_add = "require('plugins.deol')"
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
+
+[[plugins]]
+repo = 'mechatroner/rainbow_csv'
+
+[[plugins]]
+repo = 'LeafCage/vimhelpgenerator'
