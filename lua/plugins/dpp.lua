@@ -41,3 +41,4 @@ vim.api.nvim_create_autocmd("User", {
 
 vim.cmd("filetype indent plugin on")
 vim.cmd("syntax on")
+
