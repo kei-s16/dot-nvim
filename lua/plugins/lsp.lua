@@ -1,5 +1,24 @@
+-- LSをいい感じにインストールする
+local DEFAULT_SETTINGS = {
+    ensure_installed = {
+      "vimls",
+      "lua_ls",
+      "rust_analyzer",
+      "denols",
+      "tsserver",
+      "intelephense",
+      "ansiblels",
+      "dockerls",
+      "terraformls",
+      "efm",
+      "jsonls",
+      "yamlls",
+    },
+    automatic_installation = true,
+}
+
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup(DEFAULT_SETTINGS)
 
 local capabilities = require("ddc_source_lsp").make_client_capabilities()
 
