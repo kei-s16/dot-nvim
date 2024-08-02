@@ -38,7 +38,7 @@ export class Config extends BaseConfig {
     });
 
     const [context, options] = await args.contextBuilder.get(args.denops);
-    const basePath = "~/.config/nvim/toml/";
+    const basePath = Deno.build.os === "windows" ? "~/AppData/Local/nvim/toml/" : "~/.config/nvim/toml/";
 
     // Load toml plugins
     const tomls: Toml[] = [];

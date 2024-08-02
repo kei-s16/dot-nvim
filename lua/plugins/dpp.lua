@@ -1,5 +1,13 @@
+local config_base_path = ""
+
+if vim.fn.has('win64') == 1 or vim.fn.has('win32') == 1 then
+  config_base_path = vim.env.HOME .. '/AppData/Local'
+else
+  config_base_path = vim.env.HOME .. '/.config'
+end
+
 local dpp_base_path = "~/.cache/dpp"
-local dpp_config_path = "~/.config/nvim/ts/dpp.ts"
+local dpp_config_path = config_base_path .. "/nvim/ts/dpp.ts"
 
 local required_plugin_dir = "~/.cache/dpp/repos/github.com/"
 local required_plugins = {
