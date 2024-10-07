@@ -5,7 +5,7 @@ local DEFAULT_SETTINGS = {
       "lua_ls",
       "rust_analyzer",
       "denols",
-      "tsserver",
+      "ts_ls",
       "intelephense",
       "ansiblels",
       "dockerls",
@@ -49,8 +49,8 @@ require("mason-lspconfig").setup_handlers {
       capabilities = capabilities,
     }
   end,
-  ["tsserver"] = function ()
-    lspconfig.tsserver.setup {
+  ["ts_ls"] = function ()
+    lspconfig.ts_ls.setup {
       root_dir = lspconfig.util.root_pattern('package.json', 'tsconfig.json'),
       capabilities = capabilities,
     }
