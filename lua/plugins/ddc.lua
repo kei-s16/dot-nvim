@@ -44,9 +44,10 @@ ddc.patch_global {
     },
     ['skkeleton'] = {
       mark = 'skkeleton',
-      matchers = {'skkeleton'},
+      matchers = {},
       sorters = {},
       minAutoCompleteLength = 2,
+      isVolatile = true
     },
     ['lsp'] = {
       mark = 'lsp',
