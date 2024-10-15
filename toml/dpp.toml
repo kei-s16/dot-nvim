@@ -5,6 +5,9 @@ repo = 'Shougo/dpp.vim'
 repo = 'vim-denops/denops.vim'
 
 [[plugins]]
+repo = 'vim-denops/denops-shared-server.vim'
+
+[[plugins]]
 repo = 'Shougo/dpp-ext-lazy'
 on_source = 'dpp.vim'
 
