@@ -52,7 +52,7 @@ export class Config extends BaseConfig {
     const ftplugins: Record<string, string> = {};
     const hooksFiles: string[] = [];
 
-    // Load toml plugins
+    // tomlにあるやつ全部読む
     const [tomlExt, tomlOptions, tomlParams]: [
       TomlExt | undefined,
       ExtOptions,
@@ -88,7 +88,7 @@ export class Config extends BaseConfig {
 
       const tomls = await Promise.all(tomlPromises);
 
-      // Merge toml results
+      // tomlに書いてあることいい感じに格納する
       for (const toml of tomls) {
         for (const plugin of toml.plugins ?? []) {
           recordPlugins[plugin.name] = plugin;
@@ -110,6 +110,7 @@ export class Config extends BaseConfig {
       }
     }
 
+    // ローカルの開発中 or forkしたプラグイン読む
     const [localExt, localOptions, localParams]: [
       LocalExt | undefined,
       ExtOptions,
@@ -134,6 +135,7 @@ export class Config extends BaseConfig {
       });
 
       for (const plugin of plugins) {
+        // すでに読み込んであったらdpp-ext-localで取ってきたやつ優先
         if (plugin.name in recordPlugins) {
           recordPlugins[plugin.name] = Object.assign(
             recordPlugins[plugin.name],
@@ -145,6 +147,7 @@ export class Config extends BaseConfig {
       }
     }
 
+    // lazyloadまとめる
     const [lazyExt, lazyOptions, lazyParams]: [
       LazyExt | undefined,
       ExtOptions,
