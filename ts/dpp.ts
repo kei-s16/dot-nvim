@@ -44,7 +44,6 @@ export class Config extends BaseConfig {
     denops: Denops;
     contextBuilder: ContextBuilder;
     basePath: string;
-    dpp: Dpp;
   }): Promise<ConfigReturn> {
     args.contextBuilder.setGlobal({
       extParams: {
