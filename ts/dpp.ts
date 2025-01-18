@@ -27,13 +27,6 @@ import type {
   Params as LazyParams,
 } from "jsr:@shougo/dpp-ext-lazy@~1.5.0";
 
-
-type Toml = {
-  hooks_file?: string;
-  ftplugins?: Record<string, string>;
-  plugins: Plugin[];
-};
-
 type LazyMakeStateResult = {
   plugins: Plugin[];
   stateLines: string[];
