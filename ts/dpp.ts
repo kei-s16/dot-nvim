@@ -27,11 +27,6 @@ import type {
   Params as LazyParams,
 } from "jsr:@shougo/dpp-ext-lazy@~1.5.0";
 
-type LazyMakeStateResult = {
-  plugins: Plugin[];
-  stateLines: string[];
-};
-
 export class Config extends BaseConfig {
   override async config(args: {
     denops: Denops;
@@ -116,16 +111,27 @@ export class Config extends BaseConfig {
       }
     }
 
-    const lazyResult = await args.dpp.extAction(
-      args.denops,
-      context,
-      options,
-      "lazy",
-      "makeState",
-      {
-        plugins: Object.values(recordPlugins),
-      },
-    ) as LazyMakeStateResult | undefined;
+    const [lazyExt, lazyOptions, lazyParams]: [
+      LazyExt | undefined,
+      ExtOptions,
+      LazyParams,
+    ] = await args.denops.dispatcher.getExt("lazy") as [LazyExt | undefined, ExtOptions, LazyParams];
+    let lazyResult: LazyMakeStateResult | undefined = undefined;
+    if (lazyExt) {
+      const action = lazyExt.actions.makeState;
+
+      lazyResult = await action.callback({
+        denops: args.denops,
+        context,
+        options,
+        protocols,
+        extOptions: lazyOptions,
+        extParams: lazyParams,
+        actionParams: {
+          plugins: Object.values(recordPlugins),
+        }
+      }) as LazyMakeStateResult | undefined;
+    }
 
     return {
       ftplugins,
