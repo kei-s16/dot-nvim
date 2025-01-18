@@ -1,10 +1,31 @@
 import {
+  type ContextBuilder,
+  type ExtOptions,
+  type Plugin,
+} from "jsr:@shougo/dpp-vim@~4.1.0/types";
+import {
   BaseConfig,
-  ContextBuilder,
-  Dpp,
-  Plugin,
-} from "https://deno.land/x/dpp_vim@v0.1.0/types.ts";
-import { Denops, fn } from "https://deno.land/x/dpp_vim@v0.1.0/deps.ts";
+  type ConfigReturn,
+  type MultipleHook,
+} from "jsr:@shougo/dpp-vim@~4.1.0/config";
+
+import type { Denops } from "jsr:@denops/std@~7.4.0";
+import * as fn from "jsr:@denops/std@~7.4.0/function";
+
+import type {
+  Ext as TomlExt,
+  Params as TomlParams,
+} from "jsr:@shougo/dpp-ext-toml@~1.3.0";
+import type {
+  Ext as LocalExt,
+  Params as LocalParams,
+} from "jsr:@shougo/dpp-ext-local@~1.3.0";
+import type {
+  Ext as LazyExt,
+  LazyMakeStateResult,
+  Params as LazyParams,
+} from "jsr:@shougo/dpp-ext-lazy@~1.5.0";
+
 
 type Toml = {
   hooks_file?: string;
