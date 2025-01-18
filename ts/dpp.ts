@@ -110,6 +110,41 @@ export class Config extends BaseConfig {
       }
     }
 
+    const [localExt, localOptions, localParams]: [
+      LocalExt | undefined,
+      ExtOptions,
+      LocalParams,
+    ] = await args.denops.dispatcher.getExt("local") as [LocalExt | undefined, ExtOptions, LocalParams];
+    if (localExt) {
+      const action = localExt.actions.local;
+
+      const plugins = await action.callback({
+        denops: args.denops,
+        context,
+        options,
+        protocols,
+        extOptions: localOptions,
+        extParams: localParams,
+        actionParams: {
+          directory: "~/tmp/vim-dev",
+          options: {
+            merged: false,
+          }
+        },
+      });
+
+      for (const plugin of plugins) {
+        if (plugin.name in recordPlugins) {
+          recordPlugins[plugin.name] = Object.assign(
+            recordPlugins[plugin.name],
+            plugin,
+          );
+        } else {
+          recordPlugins[plugin.name] = plugin;
+        }
+      }
+    }
+
     const [lazyExt, lazyOptions, lazyParams]: [
       LazyExt | undefined,
       ExtOptions,
