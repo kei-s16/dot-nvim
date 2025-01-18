@@ -45,10 +45,7 @@ export class Config extends BaseConfig {
     contextBuilder: ContextBuilder;
     basePath: string;
     dpp: Dpp;
-  }): Promise<{
-    plugins: Plugin[];
-    stateLines: string[];
-  }> {
+  }): Promise<ConfigReturn> {
     args.contextBuilder.setGlobal({
       extParams: {
         installer: {
@@ -146,3 +143,4 @@ export class Config extends BaseConfig {
     };
   }
 }
+
