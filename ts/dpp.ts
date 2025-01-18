@@ -11,7 +11,6 @@ import {
 import { Protocol } from "jsr:@shougo/dpp-vim@~4.1.0/protocol";
 
 import type { Denops } from "jsr:@denops/std@~7.4.0";
-import * as fn from "jsr:@denops/std@~7.4.0/function";
 
 import type {
   Ext as TomlExt,
