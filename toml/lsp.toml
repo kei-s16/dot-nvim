@@ -20,3 +20,4 @@ on_source = 'mason.nvim'
 [[plugins]]
 repo = 'williamboman/mason-lspconfig.nvim'
 on_source = 'mason.nvim'
+

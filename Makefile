@@ -29,3 +29,4 @@ skk:
 
 clean:
 	unlink $(HOME)/.config/nvim
+

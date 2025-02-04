@@ -17,3 +17,4 @@ if vim.fn.has('mac') == 0 then
   require('settings.tabline')
 end
 require('settings.keyconfig')
+

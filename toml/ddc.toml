@@ -36,3 +36,4 @@ lua_source = "require('plugins.skkeleton')"
 repo = 'kei-s16/skkeleton-azik-kanatable'
 on_source = 'skkeleton'
 depends = ['skkeleton']
+

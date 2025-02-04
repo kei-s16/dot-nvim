@@ -9,3 +9,4 @@ vim.opt.statusline:append('%w')
 vim.opt.statusline:append('%=')
 vim.opt.statusline:append('[%{&fileencoding}]')
 vim.opt.statusline:append('[L:%l/%L]')
+
