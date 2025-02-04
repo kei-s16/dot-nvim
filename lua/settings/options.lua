@@ -28,3 +28,4 @@ vim.opt.cursorline = true
 vim.opt.list = true
 vim.opt.wrap = true
 vim.opt.foldmethod = 'indent'
+

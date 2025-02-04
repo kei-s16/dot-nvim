@@ -5,3 +5,4 @@ hook_add = '''
     colorscheme solarized8
     set termguicolors
 '''
+

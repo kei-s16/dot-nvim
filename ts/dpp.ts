@@ -63,14 +63,14 @@ export class Config extends BaseConfig {
       const action = tomlExt.actions.load;
 
       const tomlPromises = [
-        { path: basePath + "dpp.toml", lazy: false},
-        { path: basePath + "theme.toml", lazy: false},
-        { path: basePath + "i18n.toml", lazy: false},
-        { path: basePath + "ddc.toml", lazy: true},
-        { path: basePath + "ddu.toml", lazy: true},
-        { path: basePath + "git.toml", lazy: true},
-        { path: basePath + "lsp.toml", lazy: true},
-        { path: basePath + "etc.toml", lazy: true},
+        { name: "dpp.toml", lazy: false},
+        { name: "theme.toml", lazy: false},
+        { name: "i18n.toml", lazy: false},
+        { name: "ddc.toml", lazy: true},
+        { name: "ddu.toml", lazy: true},
+        { name: "git.toml", lazy: true},
+        { name: "lsp.toml", lazy: true},
+        { name: "etc.toml", lazy: false},
       ].map((toml) => action.callback({
         denops: args.denops,
         context,
@@ -79,7 +79,7 @@ export class Config extends BaseConfig {
         extOptions: tomlOptions,
         extParams: tomlParams,
         actionParams: {
-          path: toml.path,
+          path: basePath + toml.name,
           options: {
             lazy: toml.lazy
           }

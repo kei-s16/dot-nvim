@@ -35,3 +35,4 @@ end
 -- tablineを設定する
 vim.opt.showtabline = 2
 vim.opt.tabline = '%!v:lua.render_tabline()'
+

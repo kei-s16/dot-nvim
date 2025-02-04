@@ -74,3 +74,4 @@ keymap('i', '<TAB>', 'v:lua.ddc_completion()', {silent = true, expr = true})
 keymap('i', '<S-TAB>', 'v:lua.ddc_completion()', {expr = true})
 
 ddc.enable()
+

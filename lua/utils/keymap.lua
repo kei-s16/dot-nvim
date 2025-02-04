@@ -19,3 +19,4 @@ function Mapping.keymap(mode, keybind, assigncmd, opts)
 end
 
 return Mapping
+
