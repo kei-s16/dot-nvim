@@ -22,7 +22,6 @@ require("mason-lspconfig").setup(DEFAULT_SETTINGS)
 
 local capabilities = require("ddc_source_lsp").make_client_capabilities()
 
-
 -- キーマップくらいはまとめておく
 local on_attach = function(client, bufnr)
   local opts = {}
@@ -42,24 +41,16 @@ end
 
 local lspconfig = require("lspconfig")
 
-require("mason-lspconfig").setup_handlers {
-  ["denols"] = function ()
-    lspconfig.denols.setup {
-      root_dir = lspconfig.util.root_pattern("deno.json"),
-      capabilities = capabilities,
-    }
-  end,
-  ["ts_ls"] = function ()
-    lspconfig.ts_ls.setup {
-      root_dir = lspconfig.util.root_pattern('package.json', 'tsconfig.json'),
-      capabilities = capabilities,
-    }
-  end,
-  function (server_name) -- 明示的に指定してないやつ一括で
-    lspconfig[server_name].setup {
-      on_attach = on_attach,
-      capabilities = capabilities,
-    }
-  end
-}
+lspconfig.denols.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  root_markers = { "deno.json", "deno.jsonc", "deps.ts" },
+  workspace_required = true,
+})
+lspconfig.ts_ls.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  root_markers = { "package.json" },
+  workspace_required = true,
+})
 
