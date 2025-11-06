@@ -3,6 +3,9 @@ repo = 'Shougo/deol.nvim'
 lua_add = "require('plugins.deol')"
 
 [[plugins]]
+repo = 'vim-denops/denops-shared-server.vim'
+
+[[plugins]]
 repo = 'cohama/lexima.vim'
 
 [[plugins]]

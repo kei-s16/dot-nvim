@@ -1,4 +1,5 @@
 vim.g.mapleader = ' '
+vim.g.denops_server_addr = '127.0.0.1:32123'
 
 if vim.fn.has('win64') == 1 or vim.fn.has('win32') == 1 then
     vim.opt.shellcmdflag = "-c"
