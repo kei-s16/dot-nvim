@@ -24,8 +24,6 @@ vim.opt.formatoptions:append('mM')
 
 -- window_options
 vim.opt.number = true
-vim.opt.cursorline = true
 vim.opt.list = true
 vim.opt.wrap = true
-vim.opt.foldmethod = 'indent'
 
